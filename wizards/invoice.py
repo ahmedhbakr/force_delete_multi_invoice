@@ -127,7 +127,7 @@ class AccountInvoiceCancel(models.TransientModel):
             'effect': {
                 'fadeout': 'slow',
                 'message': (  "Invoices Canceled : (" +  str(count_invoice)   +    ") and "  +  "  Credit note Canceled : ("  + str(count_credit_note) +")"        ) ,                                                                             
-                'img_url': '/force_delete_multi_invoice-11.0/static/description/icon.png',
+                'img_url': '/force_delete_multi_invoice/static/description/icon.png',
                 'type': 'rainbow_man',
             }
         } 
