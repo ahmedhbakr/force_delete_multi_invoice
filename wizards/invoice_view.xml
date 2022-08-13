@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+ 
+        <record id="invoice_cancel_view" model="ir.ui.view">
+            <field name="name">account.invoice.cancel.form</field>
+            <field name="model">account.invoice.cancel</field>
+            <field name="arch" type="xml">
+                    <form string="Multi Force Delete"   >
+                        <group>
+                             
+                            <p class="o_form_label"> 
+                                <p style="min-width: 360px;background-color:powderblue;display: inline-block;padding: 5px;color: #187591;">I will delete all selected invoices </p>
+                                <p style="min-width: 360px;background-color: #ffa7a5;display: inline-block;padding: 5px;color: #a12b27;text-align: right;">سأقوم بحذف جميع الفواتير المختارة </p>
+                                <p style="min-width: 360px;background-color:powderblue;display: inline-block;padding: 5px;color: #187591;">If Invoice is paid or Open, I will also delete any credit note </p>
+                                <p style="min-width: 360px;background-color: #ffa7a5;display: inline-block;padding: 5px;color: #a12b27;text-align: right;">وفى حالة الفاتورة مدفوعة/مفتوحة سأقوم ايضا بحذف اى  كريدت نوت </p>
+                                <p style="min-width: 360px;background-color:powderblue;display: inline-block;padding: 5px;color: #187591;">and will not delete any payments</p>
+                                <p style="min-width: 360px;background-color: #ffa7a5;display: inline-block;padding: 5px;color: #a12b27;text-align: right;">ولن احذف اى مدفوعات </p>
+                            </p>
+                        </group>
+
+                        <footer>
+                            <button string="Confirm تأكيد الحذف" name="invoice_cancel" type="object" class="btn-danger"  />
+                            <button string="Cancel تراجع" class="btn-default" special="cancel"  default_focus="1"  />
+                        </footer>
+                    </form>
+                   
+            </field>
+        </record>
+ 
+
+        <record id="invoice_cancel_view2" model="ir.ui.view">
+            <field name="name">account.invoice.cancel.form</field>
+            <field name="model">account.invoice.cancel</field>
+            <field name="arch" type="xml">
+                    <form string="Multi Force Delete"   >
+                        <group>
+                             
+                            <p class="o_form_label"> 
+                                <p style="min-width: 360px;background-color:powderblue;display: inline-block;padding: 5px;color: #187591;">I will cancel all selected invoices </p>
+                                <p style="min-width: 360px;background-color: #ffa7a5;display: inline-block;padding: 5px;color: #a12b27;text-align: right;">سأقوم بالغاء جميع الفواتير المختارة </p>
+                                <p style="min-width: 360px;background-color:powderblue;display: inline-block;padding: 5px;color: #187591;">If Invoice is paid or Open, I will also cancel any credit note </p>
+                                <p style="min-width: 360px;background-color: #ffa7a5;display: inline-block;padding: 5px;color: #a12b27;text-align: right;">وفى حالة الفاتورة مدفوعة/مفتوحة سأقوم ايضا بالغاء اى  كريدت نوت </p>
+                                <p style="min-width: 360px;background-color:powderblue;display: inline-block;padding: 5px;color: #187591;">and will not cancel any payments</p>
+                                <p style="min-width: 360px;background-color: #ffa7a5;display: inline-block;padding: 5px;color: #a12b27;text-align: right;">ولن احذف اى مدفوعات </p>
+                            </p>
+                        </group>
+
+                        <footer>
+                            <button string="Confirm تأكيد الغاء" name="invoice_cancel2" type="object" class="btn-danger"  />
+                            <button string="Cancel تراجع" class="btn-default" special="cancel"  default_focus="1"  />
+                        </footer>
+                    </form>
+                   
+            </field>
+        </record>
+        <act_window id="action_invoice_cancel"
+            multi="True"
+            key2="client_action_multi" name="Force | Delete"
+            view_id="invoice_cancel_view"
+            res_model="account.invoice.cancel" src_model="account.invoice"
+            view_mode="form" target="new" view_type="form"
+            groups="base.group_erp_manager"
+             />
+
+        <act_window id="action_invoice_cancel2"
+            multi="True"
+            key2="client_action_multi" name="Force | Cancel"
+            view_id="invoice_cancel_view2"
+            res_model="account.invoice.cancel" src_model="account.invoice"
+            view_mode="form" target="new" view_type="form"
+            groups="base.group_erp_manager"
+             />
+ 
+
+    </data>
+</odoo>
